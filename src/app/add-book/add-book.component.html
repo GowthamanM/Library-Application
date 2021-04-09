@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" name="search"
+                placeholder="Enter Book ID or Name" type="text" [(ngModel)]="searchInput">
+                <button class="btn btn-outline-primary my-2 my-sm-0" (click)="searchBook()">Search</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-primary text-white" routerLink="/addBookForm">Add Book</a>
+        </div>
+    </div>
+    <div class="book-list mt-3">
+        <table class="table table-striped">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">Book ID</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Quantity Available</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-center" *ngFor="let book of searchBooks">
+                <td ng-model="bookID">{{book.book_id}}</td>
+                <td>{{book.book_name}}</td>
+                <td>{{book.quantity}}</td>
+                <td>
+                    <a routerLink="/addBook" class="btn btn-danger text-white" (click)="deleteBook(book)"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+

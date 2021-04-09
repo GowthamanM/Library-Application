@@ -1,0 +1,26 @@
+.row{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.col-md-4{
+    border-radius: 15px;
+    padding: 55px;
+    background-color: white;
+    /* border: 1px solid #6C63FF; */
+}
+#submitButton{
+    background-color: #ffc93c;
+    border: none;
+}
+.brand{
+    color:#ffc93c;
+    font-family: 'Reggae One', cursive;
+}
+.col-md-3{
+    margin-left: 55px;
+}
+.errorMessage{
+    color:red;
+}

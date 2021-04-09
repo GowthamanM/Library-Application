@@ -1,0 +1,53 @@
+<div class="col-md-4">
+  <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" name="search"
+      placeholder="Enter Book ID or Name" type="date" [(ngModel)]="searchDate">
+      <button class="btn btn-outline-primary my-2 my-sm-0" (click)="searchLog()">Get Log</button>
+  </form>
+</div>
+<ul class="nav nav-pills mb-3 mt-3" id="pills-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">IN</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Out</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Student ID</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let log of InData">
+                <th scope="row">{{log.student_id}}</th>
+                <td>{{log.student_name}}</td>
+                <td>{{log.time}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Student ID</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let log of OutData">
+            <th scope="row">{{log.student_id}}</th>
+            <td>{{log.student_name}}</td>
+            <td>{{log.time}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
